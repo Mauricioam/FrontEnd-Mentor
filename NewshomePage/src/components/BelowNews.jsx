@@ -5,10 +5,9 @@ function BelowNews() {
   return (
     <section className="flex desktop:flex-row flex-col   gap-10">
       {belowNewsData.map((item, i) => (
-        <div key={i}>
-          <div className="flex gap-4">
-            <img className="w-28" src={item.img} alt="image of the news" />
-            <div className="flex flex-col gap-6">
+          <div className="flex gap-4  h-40 ">
+            <img className="w-36 h-40" src={item.img} alt="image of the news" />
+            <div className="flex flex-col gap-2 ">
               <h1 className="text-4xl font-bold text-grayishBlue">
                 {item.number}
               </h1>
@@ -18,7 +17,6 @@ function BelowNews() {
               <p>{item.text}</p>
             </div>
           </div>
-        </div>
       ))}
     </section>
   );

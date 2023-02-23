@@ -10,7 +10,7 @@ function Home() {
   return (
   <div>
     <div className={`bg-opacity-50 bg-darkGrayishBlue fixed  h-screen w-full ${open ? "flex":"hidden"}`}></div>
-    <div className='flex flex-col lg:p-8 p-24 gap-16 z-0'>
+    <div className='flex flex-col lg:p-8 px-48 py-12 gap-16 z-0'>
         <Header open={open} setOpen={setOpen}/>
         <ContanierNews/>
         <BelowNews/> 
