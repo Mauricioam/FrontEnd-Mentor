@@ -4,11 +4,11 @@ import SideNews from './SideNews';
 
 function ContanierNews() {
   return (
-    <section role="mainMenu" className='grid desktop:grid-cols-7 gap-8   '>
-        <div className='desktop:col-span-5 '>
+    <section role="mainMenu" className='grid desktop:grid-cols-12 gap-5  '>
+        <div className='desktop:col-span-8 '>
         <MainNews/>
         </div>
-        <div className='desktop:col-span-2 '>
+        <div className='desktop:col-span-4 '>
         <SideNews/>
         </div>
     </section>
