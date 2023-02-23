@@ -3,9 +3,9 @@ import sideNews from "../data/sideNewsData";
 
 function SideNews() {
   return (
-    <section className="px-5 flex flex-col lg:h-full h-screen bg-veryDarkBlue p-8">
+    <section className="px-5 flex flex-col h-full border border-softRed bg-veryDarkBlue p-8">
       <h1 className="text-6xl font-extrabold text-softOrange ">New</h1>
-      <div className="flex flex-col lg:h-full h-screen justify-around ">
+      <div className="flex flex-col h-[40rem]   justify-around ">
         {sideNews.map((item, i) => (
   
           <div className="flex flex-col gap-4" key={i}>
