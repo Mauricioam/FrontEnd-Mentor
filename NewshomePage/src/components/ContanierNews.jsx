@@ -8,7 +8,7 @@ function ContanierNews() {
         <div className='desktop:col-span-5 '>
         <MainNews/>
         </div>
-        <div className='desktop:col-span-2 border'>
+        <div className='desktop:col-span-2 '>
         <SideNews/>
         </div>
     </section>
