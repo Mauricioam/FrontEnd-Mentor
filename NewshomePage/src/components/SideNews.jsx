@@ -3,7 +3,7 @@ import sideNews from "../data/sideNewsData";
 
 function SideNews() {
   return (
-    <section className="px-5 flex flex-col h-full border border-softRed bg-veryDarkBlue p-8">
+    <section className="px-5 flex flex-col h-full bg-veryDarkBlue p-8">
       <h1 className="text-6xl font-extrabold text-softOrange ">New</h1>
       <div className="flex flex-col h-[40rem]   justify-around ">
         {sideNews.map((item, i) => (
