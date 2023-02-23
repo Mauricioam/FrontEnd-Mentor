@@ -26,9 +26,10 @@ function Header({ open, setOpen }) {
       </div>
       <button className="desktop:hidden" onClick={()=>setOpen(true)} >
        <img src={menuIcon} alt="Menu icon " />
+       
       </button>
       {/* Rigth Menu */}
-      <div className={` desktop:hidden fixed top-0 right-0 ${open ? "w-[80%]  shadow-2xl ": ""} transition-all duration-500  w-0 flex h-full  bg-offWhite  justify-start ml-44 pt-10 z-10`}>
+      <div className={`desktop:hidden fixed top-0 right-0 ${open ? "w-[80%]  shadow-2xl ": ""} transition-all duration-500  w-0 flex h-full  bg-offWhite  justify-start ml-44 pt-10 z-10`}>
       <div className="desktop:hidden px-7 w-full flex flex-col gap-10">
         <button className="flex justify-end hover:cursor-pointer" onClick={()=> setOpen(false)}>
           <img className="w-10" src={closeMenu} alt="close menu icon" />
