@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TextField from "./TextField";
 import InputField from "./InputField";
 import SubmitButton from "./SubmitButton";
@@ -27,19 +27,57 @@ const TextFieldContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+/* 
+meses que tienen 31 dias: Enero, Marzo, Mayo, Julio, Agosto, Octubre, y Dic
+meses de 30 dias : abril, junio, septiembre, noviembre
+ultimos años bisiesto 2012,2016,2020,2024 == febrero tiene 29 dias
+
+*/
 
 function Wrapper() {
+  const [entries, setEntries] = useState({});
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    setEntries({ ...entries, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(entries);
+  };
+
   return (
     <WrapperContainer>
-      <InputsContainer>
-        <InputField labelText={"DAY"} placeholder="DD" />
-        <InputField labelText={"MONTH"} placeholder="MM" />
-        <InputField labelText={"YEAR"} placeholder="YYYY" />
-      </InputsContainer>
-      <SubmitButtonContainer>
-        <Separator />
-        <SubmitButton />
-      </SubmitButtonContainer>
+      <form onSubmit={handleSubmit}>
+        <InputsContainer>
+          <InputField
+            name="day"
+            labelText={"DAY"}
+            placeholder="DD"
+            handleChange={handleChange}
+            entries={entries}
+          />
+          <InputField
+            name="month"
+            labelText={"MONTH"}
+            placeholder="MM"
+            handleChange={handleChange}
+            entries={entries}
+          />
+          <InputField
+            name={"year"}
+            labelText={"YEAR"}
+            placeholder="YYYY"
+            handleChange={handleChange}
+            entries={entries}
+          />
+        </InputsContainer>
+        <SubmitButtonContainer>
+          <Separator />
+          <SubmitButton handleSubmit={handleSubmit} />
+        </SubmitButtonContainer>
+      </form>
       <TextFieldContainer>
         <TextField date={"years"} />
         <TextField date={"months"} />

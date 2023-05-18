@@ -24,13 +24,26 @@ const StyledInput = styled.input`
   }
 `;
 
-function InputField({ error, reference, labelText, ...props }) {
+function InputField({
+  error,
+  name,
+  labelText,
+  placeholder,
+  entries,
+  handleChange,
+}) {
   return (
     <InputWrapper>
       <LabelInput spacing={"4px"} fontSize={"13px"}>
         {labelText}
       </LabelInput>
-      <StyledInput error={error} ref={reference} {...props} />
+      <StyledInput
+        error={error}
+        name={name}
+        value={entries[name]}
+        placeholder={placeholder}
+        onChange={(e) => handleChange(e)}
+      />
       {error && (
         <LabelInput fontSize={"10px"} color={"var(--font-error)"}>
           {error}
