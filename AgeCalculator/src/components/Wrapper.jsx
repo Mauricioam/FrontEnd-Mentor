@@ -47,6 +47,22 @@ function Wrapper() {
     console.log(entries);
   };
 
+  const date = new Date();
+
+  function getUserYear(year, month, date) {
+    const actualDate = new Date();
+    let currenteDate = actualDate.getDate();
+    let currentMonth = actualDate.getMonth() + 1;
+    let currentYear = actualDate.getFullYear();
+    let userYear = currentYear - year;
+    if (currentMonth >= month && currenteDate >= date) {
+      return userYear;
+    } else {
+      return userYear - 1;
+    }
+  }
+  console.log(getUserYear(1991, 12, 11));
+
   return (
     <WrapperContainer>
       <form onSubmit={handleSubmit}>
