@@ -47,22 +47,23 @@ function Wrapper() {
     console.log(entries);
   };
 
-  const date = new Date();
-
   function getUserYear(year, month, date) {
+    let userAge = {};
     const actualDate = new Date();
     let currenteDate = actualDate.getDate();
     let currentMonth = actualDate.getMonth() + 1;
     let currentYear = actualDate.getFullYear();
     let userYear = currentYear - year;
     if (currentMonth >= month && currenteDate >= date) {
-      return userYear;
+      userAge.year = userYear;
+      userAge.month = currentMonth;
     } else {
-      return userYear - 1;
+      userAge.year = userYear - 1;
+      userAge.month = currentMonth - 1;
     }
+    return userAge;
   }
   console.log(getUserYear(1991, 12, 11));
-
   return (
     <WrapperContainer>
       <form onSubmit={handleSubmit}>
