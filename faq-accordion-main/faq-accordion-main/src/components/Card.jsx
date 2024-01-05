@@ -7,7 +7,7 @@ let text = "What is Frontend Mentor adn how it will help me?";
 
 function Card() {
   return (
-    <div>
+    <div className="card-box">
       <TitleIcon />
       <Dropdown title={firstTitle} text={text} />
       <Dropdown title={firstTitle} text={text} />
